@@ -1,0 +1,23 @@
+{
+  "name": "learnWebpack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://sunbigshan@github.com/sunbigshan/learnWebpack.git",
+  "author": "genhua.sun <genhua.sun@xuncetech.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch" 
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9"
+  }
+}
