@@ -1,3 +1,5 @@
+require('./style.css')
+
 class People {
   constructor (name) {
     this.name = name

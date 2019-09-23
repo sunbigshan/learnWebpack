@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  devtool: 'eval-source-map',
+  // devtool: 'eval-source-map',
   entry: './test/src/index.js',
   output: {
     filename: 'bundle.js',
@@ -11,7 +11,8 @@ module.exports = {
   },
   resolveLoader: {
     alias: {
-      'babel-loader': './test/loaders/babel-loader.js'
+      'babel-loader': './test/loaders/babel-loader.js',
+      'style-loader': './test/loaders/style-loader.js'
     }
   },
   module: {
@@ -20,6 +21,13 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       }
     ]
   },

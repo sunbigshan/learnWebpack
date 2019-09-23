@@ -5,7 +5,7 @@ module.exports = function (source) {
     presets: ['@babel/env'],
     inputSourceMap: true,
     sourceMaps: true,
-    filename: this.request.split('!')[1].split('/').pop()
+    filename: this.resourcePath.split('/').pop()
   }
   var result = babel.transform(source, babelOptions)
   this.callback(null, result.code, result.map)
