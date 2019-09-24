@@ -12,7 +12,9 @@ module.exports = {
   resolveLoader: {
     alias: {
       'babel-loader': './test/loaders/babel-loader.js',
-      'style-loader': './test/loaders/style-loader.js'
+      'style-loader': './test/loaders/style-loader.js',
+      'file-loader': './test/loaders/file-loader.js',
+      'url-loader': './test/loaders/url-loader.js'
     }
   },
   module: {
@@ -28,7 +30,22 @@ module.exports = {
           'style-loader',
           'css-loader'
         ]
-      }
+      },
+      {
+        test: /\.png$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 20000,
+            },
+          },
+        ],
+      },
+      // {
+      //   test: /\.png$/,
+      //   use: 'file-loader'
+      // },
     ]
   },
   plugins: [
